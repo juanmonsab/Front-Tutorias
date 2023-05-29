@@ -74,3 +74,18 @@ const handleAgendarTutoria = async () => {
     const horariosSeleccionadosObj = estudiante.disponibilidad.filter((disponibilidad) =>
         horariosSeleccionados.some(h => h.dia === disponibilidad.dia && h.horario === disponibilidad.horario)
     );
+
+    const tutoria = {
+        tutor: {
+            codigo: estudiante.id,
+            nombre: estudiante.nombre,
+            facultad: estudiante.facultad,
+            programa: estudiante.programa,
+            semestre: estudiante.semestre,
+            habilidades: estudiante.habilidades,
+            disponibilidad: horariosSeleccionadosObj,
+        },
+        dia: horariosSeleccionadosObj[0].dia,
+        horarioInicio: horariosSeleccionadosObj[0].horario.split(" - ")[0],
+        horarioFin: horariosSeleccionadosObj[0].horario.split(" - ")[1],
+    };
