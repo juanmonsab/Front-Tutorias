@@ -65,3 +65,8 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
         setHoraInicio("");
         setHoraFin("");
     };
+    const handleEliminarDiaHora = (index) => {
+        const nuevosDiasDisponibles = [...diasDisponibles];
+        nuevosDiasDisponibles.splice(index, 1);
+        setDiasDisponibles(nuevosDiasDisponibles);
+    };
