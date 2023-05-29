@@ -6,20 +6,23 @@ export const EstudiantesApp = () => {
 
     // Estado de la lista de tutorías
     const [tutorias, setTutorias] = useState([]);
-  
+
     // Estado de la pestaña activa
     const [activeTab, setActiveTab] = useState("registroEstudiante");
     const handleAgregarEstudiante = (estudiante) => {
         setEstudiantes([...estudiantes, estudiante]);
-      };
-      const handleEliminarEstudiante = (id) => {
+    };
+    const handleEliminarEstudiante = (id) => {
         const nuevosEstudiantes = estudiantes.filter(
-          (estudiante) => estudiante.id !== id
+            (estudiante) => estudiante.id !== id
         );
         setEstudiantes(nuevosEstudiantes);
 
         const nuevasTutorias = tutorias.filter(
-          (tutoria) => tutoria.estudiante.id !== id
+            (tutoria) => tutoria.estudiante.id !== id
         );
         setTutorias(nuevasTutorias);
-      };
+    };
+    const handleAgendarTutoria = (tutoria) => {
+        setTutorias([...tutorias, tutoria]);
+    };
