@@ -18,3 +18,14 @@ export const TablaEstudiante = ({ eliminarEstudiante }) => {
 
         fetchEstudiantes();
     }, []);
+
+    const handleEliminarEstudiante = async (id) => {
+        try {
+            await deleteEstudiantes(id);
+            eliminarEstudiante(id);
+            setMensajeEliminacion("Estudiante eliminado correctamente.");
+        } catch (error) {
+            console.error("Error al eliminar el estudiante:", error);
+            setMensajeEliminacion("Error al eliminar el estudiante. Por favor, intenta nuevamente.");
+        }
+    };
