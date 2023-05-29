@@ -14,3 +14,13 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (nombre.length < 3) {
+        alert("El nombre debe tener al menos 3 caracteres.");
+        return;
+      }
+  
+      if (diasDisponibles.length === 0) {
+        alert("Debe agregar al menos una disponibilidad.");
+        return;
+      }
