@@ -56,3 +56,12 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
             alert("La hora de fin no puede ser antes que la hora de inicio.");
             return;
         }
+
+        const horario = `${horaInicio}-${horaFin}`;
+
+        setDiasDisponibles([...diasDisponibles, { dia: nuevoDia, horario }]);
+
+        setNuevoDia("");
+        setHoraInicio("");
+        setHoraFin("");
+    };
