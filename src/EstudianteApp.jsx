@@ -12,3 +12,7 @@ export const EstudiantesApp = () => {
     const handleAgregarEstudiante = (estudiante) => {
         setEstudiantes([...estudiantes, estudiante]);
       };
+      const handleEliminarEstudiante = (id) => {
+        const nuevosEstudiantes = estudiantes.filter(
+          (estudiante) => estudiante.id !== id
+        );
