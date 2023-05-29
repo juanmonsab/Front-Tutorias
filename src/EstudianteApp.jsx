@@ -28,7 +28,10 @@ export const EstudiantesApp = () => {
     };
     const handleEliminarTutoria = (tutoriaId) => {
         const nuevasTutorias = tutorias.filter(
-          (tutoria) => tutoria.id !== tutoriaId
+            (tutoria) => tutoria.id !== tutoriaId
         );
         setTutorias(nuevasTutorias);
-      };
+    };
+    const handleTabChange = (tab) => {
+        setActiveTab(tab);
+    };
