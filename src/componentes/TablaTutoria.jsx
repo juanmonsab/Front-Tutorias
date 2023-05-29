@@ -17,3 +17,13 @@ export const TablaTutoria = () => {
 
         obtenerTutorias();
     }, []);
+
+    const handleEliminarTutoria = async (codigo) => {
+        try {
+          await deleteTutoria(codigo);
+          const nuevasTutorias = tutorias.filter(tutoria => tutoria.id !== codigo);
+          setTutorias(nuevasTutorias);
+        } catch (error) {
+          console.error('Error al eliminar la sesión:', error);
+        }
+      };
