@@ -89,3 +89,15 @@ const handleAgendarTutoria = async () => {
         horarioInicio: horariosSeleccionadosObj[0].horario.split(" - ")[0],
         horarioFin: horariosSeleccionadosObj[0].horario.split(" - ")[1],
     };
+
+    try {
+        const nuevaTutoria = await postTutorias(tutoria);
+        console.log("Tutoría registrada:", nuevaTutoria);
+        agendarTutoria(nuevaTutoria);
+        setEstudianteSeleccionado("");
+        setDisponibilidadEstudiante([]);
+        setHorariosSeleccionados([]);
+    } catch (error) {
+        console.error("Error al registrar la tutoría:", error);
+    }
+};
