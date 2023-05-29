@@ -50,3 +50,9 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
         setDiasDisponibles([]);
         setPrograma("");
     };
+
+    const handleAgregarDiaHora = () => {
+        if (horaFin < horaInicio) {
+            alert("La hora de fin no puede ser antes que la hora de inicio.");
+            return;
+        }
