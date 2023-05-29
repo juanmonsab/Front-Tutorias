@@ -70,3 +70,7 @@ const handleAgendarTutoria = async () => {
         console.error("Estudiante no encontrado");
         return;
     }
+
+    const horariosSeleccionadosObj = estudiante.disponibilidad.filter((disponibilidad) =>
+        horariosSeleccionados.some(h => h.dia === disponibilidad.dia && h.horario === disponibilidad.horario)
+    );
