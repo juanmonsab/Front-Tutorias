@@ -35,3 +35,65 @@ export const EstudiantesApp = () => {
     const handleTabChange = (tab) => {
         setActiveTab(tab);
     };
+    
+    return (
+        <>
+          <nav>
+            <ul className="nav nav-tabs">
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === "registroEstudiante" ? "active" : ""}`}
+                  onClick={() => handleTabChange("registroEstudiante")}
+                >
+                  Registro de Estudiantes
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === "listaEstudiantes" ? "active" : ""}`}
+                  onClick={() => handleTabChange("listaEstudiantes")}
+                >
+                  Lista de Estudiantes
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === "registroTutoria" ? "active" : ""}`}
+                  onClick={() => handleTabChange("registroTutoria")}
+                >
+                  Registro de Tutorías
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === "listaTutorias" ? "active" : ""}`}
+                  onClick={() => handleTabChange("listaTutorias")}
+                >
+                  Lista de Tutorías
+                </button>
+              </li>
+            </ul>
+          </nav>
+    
+          {activeTab === "registroEstudiante" && (
+            <FormularioEstudiante agregarEstudiante={handleAgregarEstudiante} />
+          )}
+          {activeTab === "listaEstudiantes" && (
+            <TablaEstudiante
+              estudiantes={estudiantes}
+              eliminarEstudiante={handleEliminarEstudiante}
+            />
+          )}
+          {activeTab === "registroTutoria" && (
+            <FormularioTutoria
+              estudiantes={estudiantes}
+              agendarTutoria={handleAgendarTutoria}
+            />
+          )}
+          {activeTab === "listaTutorias" && (
+            <TablaTutoria tutorias={tutorias} eliminarTutoria={handleEliminarTutoria} />
+          )}
+        </>
+      );
+    };
+    
