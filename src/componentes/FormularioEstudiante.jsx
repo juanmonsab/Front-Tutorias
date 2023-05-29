@@ -11,3 +11,6 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
   const [horaInicio, setHoraInicio] = useState("");
   const [horaFin, setHoraFin] = useState("");
   const [programa, setPrograma] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
