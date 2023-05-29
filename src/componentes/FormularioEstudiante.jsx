@@ -33,3 +33,12 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
             disponibilidad: diasDisponibles,
             programa: programa,
         };
+
+        postEstudiantes(estudiante)
+            .then((response) => {
+                console.log("Estudiante agregado:", response);
+                agregarEstudiante(response);
+            })
+            .catch((error) => {
+                console.error("Error al agregar estudiante:", error);
+            });
