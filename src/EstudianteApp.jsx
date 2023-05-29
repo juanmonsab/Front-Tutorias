@@ -26,3 +26,9 @@ export const EstudiantesApp = () => {
     const handleAgendarTutoria = (tutoria) => {
         setTutorias([...tutorias, tutoria]);
     };
+    const handleEliminarTutoria = (tutoriaId) => {
+        const nuevasTutorias = tutorias.filter(
+          (tutoria) => tutoria.id !== tutoriaId
+        );
+        setTutorias(nuevasTutorias);
+      };
