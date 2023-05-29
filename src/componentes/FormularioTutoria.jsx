@@ -49,3 +49,24 @@ export const FormularioTutoria = ({ agendarTutoria }) => {
 
         setHorariosSeleccionados(horariosActualizados);
     };
+
+    setHorariosSeleccionados(horariosActualizados);
+};
+
+const handleAgendarTutoria = async () => {
+    if (!estudianteSeleccionado) {
+        console.error("Selecciona un estudiante");
+        return;
+    }
+
+    if (horariosSeleccionados.length === 0) {
+        console.error("Selecciona al menos un horario");
+        return;
+    }
+
+    const estudiante = estudiantes.find((estudiante) => estudiante.id === parseInt(estudianteSeleccionado));
+
+    if (!estudiante) {
+        console.error("Estudiante no encontrado");
+        return;
+    }
