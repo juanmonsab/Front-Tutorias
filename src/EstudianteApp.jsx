@@ -16,3 +16,10 @@ export const EstudiantesApp = () => {
         const nuevosEstudiantes = estudiantes.filter(
           (estudiante) => estudiante.id !== id
         );
+        setEstudiantes(nuevosEstudiantes);
+
+        const nuevasTutorias = tutorias.filter(
+          (tutoria) => tutoria.estudiante.id !== id
+        );
+        setTutorias(nuevasTutorias);
+      };
