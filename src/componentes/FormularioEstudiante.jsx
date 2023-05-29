@@ -42,3 +42,11 @@ export const FormularioEstudiante = ({ agregarEstudiante }) => {
             .catch((error) => {
                 console.error("Error al agregar estudiante:", error);
             });
+
+        setNombre("");
+        setSemestre("");
+        setFacultad("");
+        setHabilidades("");
+        setDiasDisponibles([]);
+        setPrograma("");
+    };
