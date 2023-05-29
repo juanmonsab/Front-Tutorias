@@ -34,5 +34,4 @@ La Plataforma de Estudiantes es una aplicación diseñada para facilitar la gest
 ## Ejecución
 
 Para ejecutar la aplicación en modo de desarrollo, utiliza el siguiente comando:
-
-
+npm start
